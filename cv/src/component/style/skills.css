@@ -1,0 +1,55 @@
+.corousel__container {
+    padding: 10px;
+    height: 264px;
+    white-space: nowrap;
+    overflow: scroll;
+    overflow-y: hidden;
+    
+}
+.corousel__container::-webkit-scrollbar {
+    background: #827bb073;
+    border-radius: 20px;
+    left: 10;
+  }
+  .corousel__container::-webkit-scrollbar-track {
+    background: #827bb073;
+    border-radius: 20px;
+  }
+  .corousel__container::-webkit-scrollbar-thumb {
+    background-color: #fff;
+    outline: 1px solid slategrey;
+    border-radius: 20px;
+  }
+.corousel-item {
+    display: inline-block;
+    width: 80%;
+    background: #fdbb2d;
+    padding: 19px;
+    border-radius: 27px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    margin: 0px 8px;
+    white-space: pre-wrap;
+}
+.corousel-item--icone svg {
+    font-size: 186px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 128px;
+    text-align: center;
+    justify-content: center;
+    padding: 13px;
+    color: #22c1c3;
+    background: #ffff;
+}
+.corousel-item__description--title {
+    font-size: 39px;
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+
+.corousel-item__container {
+    display: flex;
+    justify-content: space-between;
+}
+.corousel-item__description {
+    margin: 0px 16px;
+}
