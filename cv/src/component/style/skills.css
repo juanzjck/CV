@@ -53,3 +53,26 @@
 .corousel-item__description {
     margin: 0px 16px;
 }
+.git {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    overflow-y: scroll;
+}
+.git::-webkit-scrollbar {
+    background: #827bb073;
+    border-radius: 20px;
+    left: 10;
+  }
+  .git::-webkit-scrollbar-track {
+    background: #827bb073;
+    border-radius: 20px;
+  }
+  .git::-webkit-scrollbar-thumb {
+    background-color: #fff;
+    outline: 1px solid slategrey;
+    border-radius: 20px;
+  }
