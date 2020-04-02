@@ -61,6 +61,7 @@
     align-items: center;
     margin: auto;
     overflow-y: scroll;
+    height: 153px;
 }
 .git::-webkit-scrollbar {
     background: #827bb073;
