@@ -1,0 +1,74 @@
+.ContactForm {
+    padding: 20px;
+}
+.ContactForm__container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.contactForm__field {
+    display: flex;
+    width: 100%;
+    margin: 10px;
+    justify-content: center;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+}
+.contactForm__field--label {
+    width: 80px;
+    overflow: hidden;
+    background: #a7a7a7;
+    padding: 7px;
+    color: #fff;
+    font-weight: bold;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+.contactForm__field--field {
+    outline: none;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 3px;
+    width: 100%;
+    border-width: 0px;
+    font-size: 20px;
+}
+textarea.contactForm__field--field.area {
+    height: 136px;
+}
+.ContactForm__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+}
+button.contactForm__button--send {
+    width: 50%;
+    background: #22c1c3;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 2px 1px rgba(64, 60, 60, 0.6);
+    border-width: 0px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bolder;
+    display: flex;
+    justify-content: center;
+    outline: none;
+    margin: 20px;
+}
+.contactForm__button--send-icon {
+    margin: 0px 18px;
+}
+button.contactForm__button--send:hover {
+    background: #1f9ea0;
+}
+.section__title {
+    font-size: 26px;
+    text-transform: uppercase;
+    font-weight: bold;
+}

@@ -1,6 +1,7 @@
 import React, {Component, Fragment} from 'react';
 import perfil  from "../images/yo.jpg";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 const fetch = require('node-fetch');
 class Slider extends Component {
@@ -20,7 +21,7 @@ class Slider extends Component {
             this.setState({loading:true,error:null});
             try{
              
-                const result = await fetch('https://api.github.com/repos/juanzjck/CV/commits', { method: 'GET'});
+                const result = await fetch('https://api.github.com/users/juanzjck/repos', { method: 'GET'});
                 const data= await result.json();
                 this.setState({loading:false,data:data });
                 console.log(data);
@@ -34,14 +35,18 @@ class Slider extends Component {
     isLoading=()=>{
             return this.state.loading===true? '...': this.state.data.map((doc)=>{
                 return (
-                    <div className="git__item">
-                        <p className="git--title">{doc.commit.message}</p>
-                        <p>
-                            {doc.commit.committer.name}
+                    <div className="git__item" >
+                        <a href={doc.html_url} target='Blank'>
+                        <p className="git--title">{doc.name} <FontAwesomeIcon className="eye" icon={faEye}/></p>
+                        <p className="git--description">
+                         {doc.description}
                         </p>
-                        <p>
-                            {doc.commit.committer.date}
+                        <p className="git--date">
+                           Last update {doc.updated_at}
+
                         </p>
+                        </a>
+                       
                     </div >
                 )
             }
@@ -65,7 +70,9 @@ class Slider extends Component {
                                 <p className="phrase">
                                         "Never giving up, just make it"
                                 </p>
+                                <h2>GitHub Repositories</h2>
                                 <div className="git">
+                                   
                                     {this.isLoading()}
                                  
                                 </div>

@@ -1,5 +1,5 @@
 import React, {Component, Fragment} from 'react';
-
+import ContactFrom from '../component/ContactForm';
 import Skills from '../component/Skills';
 import Slider from '../component/Slider';
 class Home extends Component {
@@ -20,6 +20,9 @@ class Home extends Component {
             </section> 
             <section>
               <Skills/>
+            </section>
+            <section>
+            <ContactFrom/>
             </section>
           </Fragment> 
          );

@@ -76,3 +76,66 @@ nav.menu {
     font-size: 20px;
     font-weight: 500;
 }
+
+.git {
+    width: 60%;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    overflow-y: scroll;
+    height:193px;
+
+}
+.git__item {
+  
+    background: #fbfbfb;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+.git::-webkit-scrollbar {
+    background: #827bb073;
+    border-radius: 20px;
+    left: 10;
+  }
+  .git::-webkit-scrollbar-track {
+    background: #827bb073;
+    border-radius: 20px;
+  }
+  .git::-webkit-scrollbar-thumb {
+    background-color: #fff;
+    outline: 1px solid slategrey;
+    border-radius: 20px;
+  }
+  .git__item {
+    border-radius: 20px;
+    border: 1px solid #e6e6e6;
+    margin: 10px;
+}
+.git--title {
+    background: #fff;
+    padding: 10px;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border: 1px solid;
+    border-color: #fff;
+    margin: 0px;
+    display: flex;
+    justify-content: space-between;
+}
+.eye {
+    opacity: 0;
+}
+.git__item:hover  {
+    transform:scale(1.02);
+    opacity: 1;
+}
+.git__item:hover .eye {
+
+    opacity: 1;
+}.git__item a {
+    text-decoration: none;
+    color: #000;
+}
+p.git--date {
+    color: #a7a7a7;
+    font-weight: 500;
+}
