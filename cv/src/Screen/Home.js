@@ -2,7 +2,8 @@ import React, {Component, Fragment} from 'react';
 import ContactFrom from '../component/ContactForm';
 import Skills from '../component/Skills';
 import Slider from '../component/Slider';
-import Carousel from '../component/Caroursel';
+import PostCarousel from '../component/PostCarousel';
+import ProyectCarousel from '../component/ProyectCarousel';
 class Home extends Component {
     constructor(props) {
         super(props);
@@ -23,9 +24,13 @@ class Home extends Component {
               <Skills/>
             </section>
             <section>
-            <Carousel>
-              <p>Hola</p>
-            </Carousel>
+            <PostCarousel>
+            </PostCarousel>
+            </section>
+            <section>
+              <ProyectCarousel>
+
+              </ProyectCarousel>
             </section>
             <section>
             <ContactFrom/>

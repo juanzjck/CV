@@ -70,6 +70,7 @@ nav.menu {
     position: fixed;
     width: 100%;
     background: #fffffff5;
+    z-index: 100;
 }
 .menu__item {
     color: #fdbb2d;
@@ -138,4 +139,8 @@ nav.menu {
 p.git--date {
     color: #a7a7a7;
     font-weight: 500;
+}
+.col {
+    width: 50%;
+    height: 100%;
 }

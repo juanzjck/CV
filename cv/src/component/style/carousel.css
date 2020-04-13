@@ -9,9 +9,8 @@
     white-space: nowrap;
     margin: 10px;
 }
-.carousel {
-    display: flex;
-    padding: 14px;
+img.carousel__img {
+    width: 100%;
 }
 .carousel__arrow {
     justify-content: center;
@@ -27,4 +26,70 @@
     background: #f9f9f9;
     margin: 10px;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.carousel__item:hover ~ .carousel__item{
+    transform:translate3d(10px,0,0);
+
+}
+.carousel__container:hover .carousel__item{
+    opacity:0.3;
+}
+
+.carousel__container:hover .carousel__item:hover{
+    transform:scale(1.02);
+    opacity:1;
+}
+.proyect__first-img .proyect__second-img {
+    width: 100%;
+    height: 100%;
+}
+.proyect__second-img {
+    width:100%;
+}
+.proyects__item {
+    display: flex;
+    height: 100vh;
+}
+
+.proyect__first-img {
+    height: 100%;
+    width: 100%;
+      /* Add the blur effect */
+  filter: blur(3px);
+  -webkit-filter: blur(3px);
+}
+
+.proyect__second-item {
+    width: 100%;
+    height: 50%;
+}
+.proyect__first-content {
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+.proyect__first-content {
+    position: absolute;
+    z-index: 100;
+}
+img.proyect__first-img {
+
+    object-fit: cover;
+}
+.--first{
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+.--second{
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    width: 100%;
+    height: 100%;
 }
