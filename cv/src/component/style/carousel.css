@@ -1,0 +1,30 @@
+.carousel__item {
+    display: inline-block;
+    width: 50vh;
+    padding: 13px;
+    white-space: pre-wrap;
+}
+.carousel__container {
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 10px;
+}
+.carousel {
+    display: flex;
+    padding: 14px;
+}
+.carousel__arrow {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.carousel__item {
+    display: inline-block;
+    width: 50vh;
+    padding: 13px;
+    white-space: pre-wrap;
+    border-radius: 20px;
+    background: #f9f9f9;
+    margin: 10px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}

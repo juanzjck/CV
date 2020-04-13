@@ -18,8 +18,8 @@ class Skills extends Component {
         return (  
               <div className="corousel">
                         <div className="corousel__container">
-                           {this.state.skils.map((doc)=>{
-                              return <Skill icon={doc.icon} title={doc.title} description={doc.description}/>
+                           {this.state.skils.map((doc,Id)=>{
+                              return <Skill key={Id} icon={doc.icon} title={doc.title} description={doc.description}/>
                            })}
                       </div>
                 </div> 

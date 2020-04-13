@@ -15,6 +15,8 @@ class App extends React.Component {
         <Layaout>
           <Switch>
             <Route exact path="/" component={Home}/>
+            <Route exact path="/posts" component={Home}/>
+            <Route exact path="/post/:id" component={Home}/>
           </Switch>
         </Layaout>
       

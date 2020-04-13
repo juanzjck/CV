@@ -1,25 +1,25 @@
 import React,{Component} from 'react';
 import './style/form.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope} from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faIgloo} from '@fortawesome/free-solid-svg-icons';
 class ContactFrom extends Component {
     constructor(props) {
         super(props);
         this.state = { loading:false, error:null, mensaje:'' }
     }
     handleSubmit=e=>{
-        this.onSubmit(e);
+        e.preventDefault();
+     
         this.setState({loading:true, error:null,mensaje:''});
         
         try{
             this.setState({loading:false, error:null,mensaje:'funca'});
+            //this.props.history.push('/');
         }catch(e){
-            this.setState({loading:true, error:e,mensaje:''});
+            this.setState({loading:false, error:e,mensaje:'error'});
         }
     }
-    onSubmit=(e)=>{
-        e.preventDefault();
-    }
+ 
     render() { 
         if(this.state.loading){
                 return ('...');

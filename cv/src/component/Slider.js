@@ -16,6 +16,10 @@ class Slider extends Component {
     componentDidMount (){
         
         this.fetchData();
+        //this.intervalId=  setInterval(this.fetchData(),5000);
+    }
+    componentWillUnmount(){
+      //  clearInterval(this.intervalId);
     }
     fetchData=async ()=>{
             this.setState({loading:true,error:null});
@@ -33,24 +37,7 @@ class Slider extends Component {
             
     }
     isLoading=()=>{
-            return this.state.loading===true? '...': this.state.data.map((doc)=>{
-                return (
-                    <div className="git__item" >
-                        <a href={doc.html_url} target='Blank'>
-                        <p className="git--title">{doc.name} <FontAwesomeIcon className="eye" icon={faEye}/></p>
-                        <p className="git--description">
-                         {doc.description}
-                        </p>
-                        <p className="git--date">
-                           Last update {doc.updated_at}
-
-                        </p>
-                        </a>
-                       
-                    </div >
-                )
-            }
-        );
+            return this.state.loading===true? '...':'';
     }
 
     render() {
@@ -73,7 +60,22 @@ class Slider extends Component {
                                 <h2>GitHub Repositories</h2>
                                 <div className="git">
                                    
-                                    {this.isLoading()}
+                                   { this.state.data.map((doc,i)=>{
+                                    return (
+                                        <div key={i} className="git__item" >
+                                            <a href={doc.html_url} target='Blank'>
+                                            <p className="git--title">{doc.name} <FontAwesomeIcon className="eye" icon={faEye}/></p>
+                                            <p className="git--description">
+                                            {doc.description}
+                                            </p>
+                                            <p className="git--date">
+                                            Last update {doc.updated_at}
+
+                                            </p>
+                                            </a>
+                                        
+                                        </div >
+                                    )})}
                                  
                                 </div>
                             </div>
