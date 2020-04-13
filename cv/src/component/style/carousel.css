@@ -46,6 +46,7 @@ img.carousel__img {
 }
 .proyect__second-img {
     width:100%;
+    object-fit: cover;
 }
 .proyects__item {
     display: flex;
@@ -63,6 +64,7 @@ img.carousel__img {
 .proyect__second-item {
     width: 100%;
     height: 50%;
+    position: relative;
 }
 .proyect__first-content {
     position: absolute;
@@ -79,17 +81,8 @@ img.proyect__first-img {
 
     object-fit: cover;
 }
-.--first{
+
+.proyect__second-content {
     position: absolute;
-    z-index: 100;
     top: 0;
-    width: 100%;
-    height: 100%;
-}
-.--second{
-    position: absolute;
-    z-index: 100;
-    top: 0;
-    width: 100%;
-    height: 100%;
 }
