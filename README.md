@@ -13,6 +13,7 @@ TASK
 -RSS (Facebbok,..)
 -Contact Form
 
+- revisar https://draftjs.org/docs/api-reference-data-conversion
 
 /FRONT
 
