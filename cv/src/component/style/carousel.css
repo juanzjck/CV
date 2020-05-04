@@ -86,3 +86,10 @@ img.proyect__first-img {
     position: absolute;
     top: 0;
 }
+h3.carousel__item--title {
+    color: #000;
+    font-weight: 900;
+}
+.carousel__item--summary {
+    color: #000;
+}

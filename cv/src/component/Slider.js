@@ -81,8 +81,9 @@ class Slider extends Component {
                             </div>
                            
                             <div className="social">
-                                    <a href="#" className="social__link"><FontAwesomeIcon icon={faLinkedin}/>   </a>
-                                    <a href="#" className="social__link"><FontAwesomeIcon icon={ faGithub}/>   </a>
+
+                                    <a href="https://www.linkedin.com/in/juansalazarzuniga/" target="blank" className="social__link"><FontAwesomeIcon icon={faLinkedin}/>   </a>
+                                    <a href="https://github.com/juanzjck" target="blank" className="social__link"><FontAwesomeIcon icon={ faGithub}/>   </a>
                                   
                             </div>
                         </div>

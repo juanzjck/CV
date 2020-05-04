@@ -21,7 +21,7 @@
 .slider {
     height: 100vh;
     background: rgb(34,193,195);
-    background: linear-gradient(319deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+    background: linear-gradient(319deg, #005882 0%, #00ACE4 100%);
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -69,11 +69,11 @@
 nav.menu {
     position: fixed;
     width: 100%;
-    background: #fffffff5;
+    background: #00ACE4;
     z-index: 100;
 }
 .menu__item {
-    color: #fdbb2d;
+    color: #ffffff;
     font-size: 20px;
     font-weight: 500;
 }
@@ -143,4 +143,20 @@ p.git--date {
 .col {
     width: 50%;
     height: 100%;
+}
+/*Start footer*/
+footer.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #00ACE4;
+    color: #fff;
+}
+.section__title {
+    font-size: 26px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    color: #00ACE4;
 }

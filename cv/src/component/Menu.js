@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import logo from '../logo.svg';
+import logo from '../images/logo.png';
 import './style/main.css';
+import { Link } from 'react-router-dom';
 class Menu extends Component {
     constructor(props) {
         super(props);
@@ -8,7 +9,7 @@ class Menu extends Component {
     }
     render() { 
         return ( <nav className="menu">
-                    <img className="menu__img" src={logo}></img>
+                    <Link to='/'><img className="menu__img" src={logo}></img></Link> 
                     <ul>
                         <li className="menu__item">
                                 Conóceme

@@ -1,0 +1,10 @@
+.section {
+    padding: 32px;
+}
+.section__container {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}

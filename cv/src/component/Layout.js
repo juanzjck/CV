@@ -8,6 +8,11 @@ function Layaout(props){
                   <Menu/>
                 </header>
                 {children}
+                <footer className="footer">
+                    <p>© 2020 Copyright:
+                      Juan Pablo Salazar
+                    </p>
+                </footer>
             </Fragment>
           
         );
