@@ -48,7 +48,7 @@ textarea.contactForm__field--field.area {
 }
 button.contactForm__button--send {
     width: 50%;
-    background: #22c1c3;
+    background: #00ACE4;
     padding: 10px;
     border-radius: 20px;
     box-shadow: 2px 2px 2px 1px rgba(64, 60, 60, 0.6);
@@ -65,10 +65,5 @@ button.contactForm__button--send {
     margin: 0px 18px;
 }
 button.contactForm__button--send:hover {
-    background: #1f9ea0;
-}
-.section__title {
-    font-size: 26px;
-    text-transform: uppercase;
-    font-weight: bold;
+    background: #005882;
 }

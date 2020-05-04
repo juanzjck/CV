@@ -23,7 +23,7 @@
 .corousel-item {
     display: inline-block;
     width: 80%;
-    background: #fdbb2d;
+    background: #00ACE4;
     padding: 19px;
     border-radius: 27px;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
@@ -37,7 +37,7 @@
     text-align: center;
     justify-content: center;
     padding: 13px;
-    color: #22c1c3;
+    color: #00ACE4;
     background: #ffff;
 }
 .corousel-item__description--title {
@@ -52,4 +52,5 @@
 }
 .corousel-item__description {
     margin: 0px 16px;
+    color: #ffff;
 }
