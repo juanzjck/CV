@@ -6,7 +6,8 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from './Screen/Home';
 import Post from './Screen/Post';
 import createHistory from "history/createBrowserHistory"
-
+import { ScrollingProvider, SectionLink, Section } from 'react-scroll-section';
+ 
 export const history = createHistory()
 
 
@@ -24,14 +25,16 @@ class App extends React.Component {
   }
   render() { 
     return ( 
-      <BrowserRouter   onUpdate={() => console.log('hola')} history={history}>
       
-        <Layaout>
+      <BrowserRouter   onUpdate={() => console.log('hola')} history={history}>
+       <ScrollingProvider>
+       <Layaout>
           <Switch>
             <Route exact path="/" component={Home}/>
             <Route exact path="/post/:id" component={Post}/>
           </Switch>
         </Layaout>
+       </ScrollingProvider>
 
       </BrowserRouter>
      );

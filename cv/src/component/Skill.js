@@ -16,7 +16,11 @@ class Skill extends Component {
                         </div>
                                         
                         <div className="corousel-item__description">
-                            <p className="corousel-item__description--title">{this.props.title} </p>
+                            <div className="corousel-item__header">
+                                <p className="corousel-item__description--title">{this.props.title} </p>
+                                <p>{this.props.category}</p>
+                            </div>
+                      
                             <p> 
                                 {this.props.description}
                             </p>

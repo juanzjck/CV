@@ -1,6 +1,5 @@
 .corousel__container {
     padding: 10px;
-    height: 264px;
     white-space: nowrap;
     overflow: scroll;
     overflow-y: hidden;
@@ -43,7 +42,6 @@
 .corousel-item__description--title {
     font-size: 39px;
     font-weight: bold;
-    margin-bottom: 0px;
 }
 
 .corousel-item__container {
@@ -53,4 +51,18 @@
 .corousel-item__description {
     margin: 0px 16px;
     color: #ffff;
+}
+
+.corousel-item--icone {
+    width: 41vh;
+}
+svg.svg-inline--fa.fa-mobile.fa-w-10 {
+    width: 87%;
+}
+.corousel-item__header {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+
 }
