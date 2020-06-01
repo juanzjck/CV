@@ -15,10 +15,10 @@ function PostCarousel(props){
                 <h3 className="section__title">News posts</h3>
 
                 <Carousel
-                            arrowLeft={<Icon className="icon-example" name="arrow-left" />}
-                            arrowRight={<Icon className="icon-example" name="arrow-right" />}
-                            addArrowClickHandler
-                            className="carousel__container"
+                         arrowLeft={<Icon className="icon-example" name="arrow-left" />}
+                         arrowRight={<Icon className="icon-example" name="arrow-right" />}
+                         addArrowClickHandler
+                         className="carousel__container"
                         >
                                 {array.map((doc,i)=>{
                                     return(

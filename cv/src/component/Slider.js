@@ -55,7 +55,7 @@ class Slider extends Component {
                                     Developer
                                 </p>
                                 <p className="phrase">
-                                        "Never giving up, just make it"
+                                        "Developer, entrepreneur and game developer for fun."
                                 </p>
                                 <h2>GitHub Repositories</h2>
                                 <div className="git">
