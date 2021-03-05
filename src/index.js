@@ -3,10 +3,25 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-
+import { ApolloProvider } from '@apollo/client';
+import client from './client';
+import { Provider } from 'react-redux';
+import { store } from './store';
+import { ApolloProvider as ApolloHooksProvider } from '@apollo/react-hooks';
+import {  KeystoneProvider } from '@keystonejs/apollo-helpers';
+import Modal from 'react-modal';
+Modal.setAppElement('#modal')
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ApolloProvider client={client}>
+      <ApolloHooksProvider client={client}>
+        <KeystoneProvider>
+          <Provider store={store}>
+            <App />
+          </Provider>
+        </KeystoneProvider>
+      </ApolloHooksProvider>
+    </ApolloProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

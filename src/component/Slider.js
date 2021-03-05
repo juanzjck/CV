@@ -1,8 +1,11 @@
 import React, {Component, Fragment} from 'react';
 import perfil  from "../images/yo.jpg";
+import background  from "../images/background.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
+import {connect} from 'react-redux';
+
 const fetch = require('node-fetch');
 class Slider extends Component {
     constructor(props) {
@@ -45,8 +48,9 @@ class Slider extends Component {
    
         return ( 
         <div className="slider">
+         
                         <div className="slider__profile">
-                                <img className="slider__image" src={perfil}></img>
+                                <img className="slider__image" src={this.props.profile?this.props.profile.image.image.publicUrl:''}></img>
                         </div>
                         <div className="badge">
                             <div className="badge__container">
@@ -57,7 +61,7 @@ class Slider extends Component {
                                 <p className="phrase">
                                         "Developer, entrepreneur and game developer for fun."
                                 </p>
-                                <h2>GitHub Repositories</h2>
+                                <h2 className="repositres__title">GitHub Repositories</h2>
                                 <div className="git">
                                    
                                    { this.state.data.map((doc,i)=>{
@@ -87,8 +91,15 @@ class Slider extends Component {
                                   
                             </div>
                         </div>
+                        <div className="backGround" >
+           
+            </div>
                 </div> );
     }
 }
- 
-export default Slider;
+ function mapStateToProps(state){
+    return{
+        profile:state.profile.profile
+    }
+ }
+export default connect(mapStateToProps)(Slider);

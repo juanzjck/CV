@@ -93,3 +93,11 @@ h3.carousel__item--title {
 .carousel__item--summary {
     color: #000;
 }
+.backGround {
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    opacity: 0.2;
+    background-attachment: fixed;
+    background-size: cover;
+}

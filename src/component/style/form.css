@@ -6,6 +6,23 @@
     flex-direction: column;
     align-items: center;
 }
+h1.text_success {
+    color: #10c830;
+}
+:root {
+    --borderWidth: 7px;
+    --height: 24px;
+    --width: 12px;
+    --borderColor: #78b13f;
+  }
+  .check {
+    display: inline-block;
+    transform: rotate(45deg);
+    height: var(--height);
+    width: var(--width);
+    border-bottom: var(--borderWidth) solid #10c830;
+    border-right: var(--borderWidth) solid #10c830;
+}
 .contactForm__field {
     display: flex;
     width: 100%;

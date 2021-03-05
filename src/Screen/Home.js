@@ -5,57 +5,103 @@ import Slider from '../component/Slider';
 import PostCarousel from '../component/PostCarousel';
 import ProyectCarousel from '../component/ProyectCarousel';
 import TextSection from '../component/TextSection';
-import api from '../api';
+import Portafolio from '../component/Portafolio';
+import { Query } from '@keystonejs/apollo-helpers';
+import gql from 'graphql-tag';
+import ScreenLayout from '../Layout/SreenLayout';
+import { withApollo } from 'react-apollo';
+import {connect} from 'react-redux';
+const GET_PROFILE=gql`query{
+  allProfiles{
+     name
+     position
+     about
+     vision
+     whyJavascript
+     phrase
+     image{
+       image{
+         publicUrl
+       }
+     }
+   }
+ }`;
+
+
+
 class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {  }
     }
-    listPost=async ()=>{
-      let listPost= await api.post.list();
-      console.log(listPost);
-    }
+  
     componentDidMount(){
-        this.listPost();
+       
         //setTimeout(()=>{alert('Hola')},3000);
     }
+    loadData=(data)=>{
+        this.props.dispatch({
+          type:'LOAD_INFO',
+          payload:data
+        });
+        this.props.dispatch({
+          type:'LOADING',
+          payload:false
+        })
+    }
     render() { 
-        return (<Fragment>
+        return (
+          <ScreenLayout>
+            <Fragment>
+              <Query query={GET_PROFILE}>
+                {(data, loading)=>{
+                  if(loading)this.props.dispatch({
+                    type:'LOADING',
+                    payload:true
+                  })
+                  if(data.data!=null){this.loadData(data.data.allProfiles[0]);}
+                  return <></>
+                }}
+              </Query>
+                <section>
+                    <Slider />
+                </section>
+                <section id="whoAmI">
+                    <TextSection title="Who am I?">
+                        {this.props.profile?this.props.profile.about:''}
+                    </TextSection>
+                </section>
+                <section id="skills">
+                    <Skills />
+                </section>
+                <section id="portafolio">
+                    <Portafolio></Portafolio>
+                </section>
+                <section>
+                    <TextSection title="Why javascript?">
+                       {this.props.profile?this.props.profile.whyJavascript:''}
+                    </TextSection>
+                </section>
+                <section id="myvision">
+                    <TextSection styleTitle={{ color: "white" }} style={{ background: "#00ACE4", color: "white" }} title="My vision">
+                        "Use my knowledge to Build solutions to make more easy and happiest our lives."
+                        <br />
+                        -jp
+                    </TextSection>
+                </section>
+            
+                <section id="contact">
+                    <ContactFrom />
+                </section>
+            </Fragment>
+          </ScreenLayout>
            
-            <section>
-              <Slider/>  
-            </section> 
-            <section id="whoAmI">
-              <TextSection title="Who am I?">
-              I'm a javascript developer, I focus on develop technologies in order to solve needs, extend and adapt business to internet.
-              
-              If you or your organization need adopt new technologies to extend or sell your services or product on internet, I can help with that cases.
-      
-              </TextSection>
-            </section>
-            <section id="skills">
-              <Skills/>
-            </section>
-           
-            <section >
-              <TextSection title="Why javascript?">
-              javascript is a powerful language to build scalable and beautiful web app or mobile app.
-              <br/>
-              Javascript have the advantage to use just one lenguaje to build back end and front end, so you team can understand just one lenguaje.
-             <br/>
-              Javascript have a lot of libraries and framework, for example: React.js, React Native, Angular, Node.js, GraphQL, and others. 
-              </TextSection>
-            </section>
-            <section id="blog">
-            <PostCarousel>
-            </PostCarousel>
-            </section>
-            <section id="contact">
-            <ContactFrom/>
-            </section>
-          </Fragment> 
          );
     }
 }
- 
-export default Home;
+function mapStateToProps(state){
+  return{
+    profile:state.profile.profile
+  }
+}
+export default connect(mapStateToProps)(withApollo(Home));
