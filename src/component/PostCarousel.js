@@ -1,7 +1,5 @@
-import React,{Fragment} from 'react';
+import React from 'react';
 import './style/carousel.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight,faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import Carousel from '@brainhubeu/react-carousel';
 import '@brainhubeu/react-carousel/lib/style.css';
 import Icon from 'react-fa';
@@ -22,24 +20,24 @@ function PostCarousel(props){
                         >
                                 {array.map((doc,i)=>{
                                     return(
-                                    <div>
+                                    <div key={i}>
                                     <Link to="/post/123112">
                                         <div  key={i} className="carousel__item">
-                                        <img className="carousel__img" src={imagenPrueba}/>
+                                        <img alt='imagen post' className="carousel__img" src={imagenPrueba}/>
                                         <h3 className="carousel__item--title">Titulo</h3>
                                         <p className="carousel__item--summary">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc congue feugiat purus sed elementum. Aliquam faucibus magna vehicula arcu commodo, in vulputate justo aliquet. Quisque accumsan bibendum nulla, eu commodo.</p>
                                         </div>
                                     </Link>
                                     <Link to="/post/123112">
                                         <div  key={i} className="carousel__item">
-                                        <img className="carousel__img" src={imagenPrueba}/>
+                                        <img alt='imagen post' className="carousel__img" src={imagenPrueba}/>
                                         <h3 className="carousel__item--title">Titulo</h3>
                                         <p className="carousel__item--summary">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc congue feugiat purus sed elementum. Aliquam faucibus magna vehicula arcu commodo, in vulputate justo aliquet. Quisque accumsan bibendum nulla, eu commodo.</p>
                                         </div>
                                     </Link>
                                     <Link to="/post/123112">
                                         <div  key={i} className="carousel__item">
-                                        <img className="carousel__img" src={imagenPrueba}/>
+                                        <img alt='imagen post' className="carousel__img" src={imagenPrueba}/>
                                         <h3 className="carousel__item--title">Titulo</h3>
                                         <p className="carousel__item--summary">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc congue feugiat purus sed elementum. Aliquam faucibus magna vehicula arcu commodo, in vulputate justo aliquet. Quisque accumsan bibendum nulla, eu commodo.</p>
                                         </div>

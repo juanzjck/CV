@@ -5,6 +5,7 @@ import gql from 'graphql-tag';
 import { Query } from '@keystonejs/apollo-helpers';
 import { withApollo } from 'react-apollo';
 import { connect } from "react-redux";
+import { Fragment } from 'react';
 const GET_PORTAFOLIO=gql`query{
     allPortafolios{
       title
@@ -20,10 +21,6 @@ const GET_PORTAFOLIO=gql`query{
   }`;
   
 //images
-const paralisisimg= require('../images/portada.svg_.png')
-const zenswave= require('../images/splashbutton.png')
-const arkmake=require('../images/ARKMAKEIT.png')
-
 class Portafolio extends React.Component {
     constructor(props) {
         super(props);
@@ -56,17 +53,14 @@ class Portafolio extends React.Component {
                             })
                             if(data) this.loadData(data)
                            
-                            return <></>
+                            return <Fragment></Fragment>
                         }}
                     </Query>
                     <div className="portafolio_row">
                     {this.props.portafolioList?this.props.portafolioList.map((p)=>{
-                            var i=0;
                             
                             return(
-                                <>
-                                 <PortafolioItem backgroundimg={p.image.image.publicUrl}  title={p.title} description={p.description}></PortafolioItem>   
-                                </>
+                                 <PortafolioItem key={p.title} backgroundimg={p.image.image.publicUrl}  title={p.title} description={p.description}></PortafolioItem>   
                             )
                     }):undefined}
                     </div>

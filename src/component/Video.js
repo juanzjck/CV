@@ -3,7 +3,7 @@ import React from 'react';
 import ReactPlayer from 'react-player';
 import "./style/video.css"
 function Video(props){
-    console.log("No esta funcionando");
+
     return (
         <div className="Video">
             <div className="video__container">

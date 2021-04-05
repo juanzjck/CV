@@ -2,10 +2,8 @@ import React, {Component} from 'react';
 import logo from '../images/logo.png';
 import './style/main.css';
 
-import { Link, animateScroll as scroll,scrollSpy, scroller,Events,  Element } from "react-scroll";
+import { Link, Events } from "react-scroll";
 import ModalLayout from './ModalLayout';
-
-
  class Menu extends Component {
     constructor(props) {
         super(props);
@@ -57,7 +55,7 @@ import ModalLayout from './ModalLayout';
                                         offset={-70}
                                         duration={500}
                                         className="menu_link">
-                                                        Who I am? 
+                                            Who am I? 
                                         </Link>            
                                     </div>                     
                                     <div  className="menu_button">
@@ -130,7 +128,7 @@ import ModalLayout from './ModalLayout';
                             offset={-70}
                             duration={500}
                             className="menu_link">
-                                            Who I am? 
+                                Who am I? 
                          </Link> 
                         </li>
 

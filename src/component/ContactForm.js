@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import './style/form.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope, faIgloo} from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope} from '@fortawesome/free-solid-svg-icons';
 import gql from 'graphql-tag';
 import { Mutation } from '@keystonejs/apollo-helpers';
 import {connect} from 'react-redux';
@@ -45,15 +45,15 @@ class ContactFrom extends Component {
         })
     }
     handleResult=async(data)=>{
-        if(data!=null){
+        if(data!==null){
             console.log(data)
             this.props.dispatch({
                 type:'CATCH_RESULT',
                 payload:data.email.message
             })
-            if(data.email.message!='OK'){
-               if(data.email.message=='400')this.handleError('Fill all the form')
-               if(data.email.message=='500')this.handleError('Server responde with 500')
+            if(data.email.message!=='OK'){
+               if(data.email.message==='400')this.handleError('Fill all the form')
+               if(data.email.message==='500')this.handleError('Server responde with 500')
             }
             setTimeout(() => {
                 this.props.dispatch({
@@ -81,11 +81,11 @@ class ContactFrom extends Component {
         return(
             <div className="ContactForm">
                 <div className="ContactForm__container">
-                    <h3 className="section__title">Get touch</h3>
+                    <h3 className="section__title">Keep touch</h3>
                     {this.state.mensaje}
                    <Mutation mutation={SEND_EMAIL}>
                        {(email,{data,loading})=>{
-                           if(loading && data==null) return <h1>...</h1>
+                           if(loading && data===null) return <h1>...</h1>
                            if(data!=null){
                                
                               this.handleResult(data)

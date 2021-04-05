@@ -1,5 +1,4 @@
-import React, {Component, Fragment} from 'react';
-import EditorPost from '../component/Editor';
+import React, {Component} from 'react';
 import './style/post.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye } from '@fortawesome/free-solid-svg-icons';
@@ -31,7 +30,7 @@ class Post extends Component {
                             <div className="post__header"  id="header">
                                 <h1>Este es un titulo</h1>
                                 <p>Frase</p>
-                                <a onClick={()=>{window.scrollTo({
+                                <a href="#" onClick={()=>{window.scrollTo({
                                       top: window.screen.height-250, 
                                       left: 0, 
                                       behavior: 'smooth'

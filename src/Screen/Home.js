@@ -2,15 +2,13 @@ import React, {Component, Fragment} from 'react';
 import ContactFrom from '../component/ContactForm';
 import Skills from '../component/Skills';
 import Slider from '../component/Slider';
-import PostCarousel from '../component/PostCarousel';
-import ProyectCarousel from '../component/ProyectCarousel';
 import TextSection from '../component/TextSection';
 import Portafolio from '../component/Portafolio';
 import { Query } from '@keystonejs/apollo-helpers';
 import gql from 'graphql-tag';
 import ScreenLayout from '../Layout/SreenLayout';
-import { withApollo } from 'react-apollo';
 import {connect} from 'react-redux';
+
 const GET_PROFILE=gql`query{
   allProfiles{
      name
@@ -19,6 +17,7 @@ const GET_PROFILE=gql`query{
      vision
      whyJavascript
      phrase
+     meta_description
      image{
        image{
          publicUrl
@@ -52,15 +51,16 @@ class Home extends Component {
     render() { 
         return (
           <ScreenLayout>
+     
             <Fragment>
-              <Query query={GET_PROFILE}>
+              <Query query={GET_PROFILE} >
                 {(data, loading)=>{
                   if(loading)this.props.dispatch({
                     type:'LOADING',
                     payload:true
                   })
                   if(data.data!=null){this.loadData(data.data.allProfiles[0]);}
-                  return <></>
+                  return <Fragment></Fragment>
                 }}
               </Query>
                 <section>
@@ -78,17 +78,11 @@ class Home extends Component {
                     <Portafolio></Portafolio>
                 </section>
                 <section>
-                    <TextSection title="Why javascript?">
+                    <TextSection  styleTitle={{ color: "white" }} style={{ background: "#00ACE4", color: "white" }} title="Why javascript?">
                        {this.props.profile?this.props.profile.whyJavascript:''}
                     </TextSection>
                 </section>
-                <section id="myvision">
-                    <TextSection styleTitle={{ color: "white" }} style={{ background: "#00ACE4", color: "white" }} title="My vision">
-                        "Use my knowledge to Build solutions to make more easy and happiest our lives."
-                        <br />
-                        -jp
-                    </TextSection>
-                </section>
+               
             
                 <section id="contact">
                     <ContactFrom />
@@ -99,9 +93,18 @@ class Home extends Component {
          );
     }
 }
+/**
+ *   <section id="myvision">
+                    <TextSection styleTitle={{ color: "white" }} style={{ background: "#00ACE4", color: "white" }} title="My vision">
+                        "Javascript is one of the most o"
+                        <br />
+                
+                    </TextSection>
+                </section>
+ */
 function mapStateToProps(state){
   return{
     profile:state.profile.profile
   }
 }
-export default connect(mapStateToProps)(withApollo(Home));
+export default connect(mapStateToProps)(Home);

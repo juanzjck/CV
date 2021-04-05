@@ -7,12 +7,13 @@ class Skill extends Component {
         super(props);
         this.state = {  }
     }
+
     render() { 
         return ( 
             <div className="corousel-item">
                 <div className="corousel-item__container">
                         <div className="corousel-item--icone"  alt="">
-                            <FontAwesomeIcon icon={this.props.icon }/> 
+                           {typeof this.props.icon=='function'?<this.props.icon/>:<FontAwesomeIcon icon={this.props.icon }/> }
                         </div>
                                         
                         <div className="corousel-item__description">

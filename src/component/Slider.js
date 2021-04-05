@@ -1,6 +1,4 @@
-import React, {Component, Fragment} from 'react';
-import perfil  from "../images/yo.jpg";
-import background  from "../images/background.png";
+import React, {Component} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
@@ -31,11 +29,11 @@ class Slider extends Component {
                 const result = await fetch('https://api.github.com/users/juanzjck/repos', { method: 'GET'});
                 const data= await result.json();
                 this.setState({loading:false,data:data });
-                console.log(data);
+               
              
             }catch(e){
                 this.setState({loading:false, error:'Ocurrio un error'});
-                console.log(e);
+            
             }
             
     }
@@ -50,16 +48,16 @@ class Slider extends Component {
         <div className="slider">
          
                         <div className="slider__profile">
-                                <img className="slider__image" src={this.props.profile?this.props.profile.image.image.publicUrl:''}></img>
+                                <img className="slider__image" alt={`${this.props.profile&&this.props.profile.name}'s perfil photo`} src={this.props.profile?this.props.profile.image.image.publicUrl:''}></img>
                         </div>
                         <div className="badge">
                             <div className="badge__container">
-                                <h1>Juan Pablo Salazar</h1>
+                                <h1>{this.props.profile&&this.props.profile.name}</h1>
                                 <p>
-                                    Developer
+                                   {this.props.profile&&this.props.profile.position}
                                 </p>
                                 <p className="phrase">
-                                        "Developer, entrepreneur and game developer for fun."
+                                    {this.props.profile&&this.props.profile.phrase}
                                 </p>
                                 <h2 className="repositres__title">GitHub Repositories</h2>
                                 <div className="git">
@@ -74,7 +72,6 @@ class Slider extends Component {
                                             </p>
                                             <p className="git--date">
                                             Last update {doc.updated_at}
-
                                             </p>
                                             </a>
                                         

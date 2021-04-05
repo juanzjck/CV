@@ -1,6 +1,4 @@
 import React from 'react';
-
-import { faReact, faUnity, faNodeJs, faDocker,faGithub } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
@@ -19,7 +17,7 @@ class PortafolioItem extends React.Component {
     render() { 
         return ( 
             <div className="portafolio_card">
-            <img className="portafolio_img" src={this.props.backgroundimg?this.props.backgroundimg:imagenPrueb}></img>
+            <img className="portafolio_img" alt={`${this.props.title}'s photo`} src={this.props.backgroundimg?this.props.backgroundimg:imagenPrueb}></img>
             <div className="portafolio_content">
               <h3>
                {this.props.title}
