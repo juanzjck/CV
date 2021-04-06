@@ -4,14 +4,13 @@ FROM node:14.15.1
 #COPY ["package.json","package-lock.json","/usr/src/"]
 COPY ["package.json","package-lock.json","/usr/src/"]
 
-WORKDIR /usr/src/src
+WORKDIR /usr/src
 
 RUN npm i --save  && npm audit fix
 
-RUN npm run build
-
 COPY [".","/usr/src/"]
 
+RUN npm run build
 
 EXPOSE 5000
 
