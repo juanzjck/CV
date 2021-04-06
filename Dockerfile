@@ -10,7 +10,6 @@ RUN npm i --save  && npm audit fix
 
 COPY [".","/usr/src/"]
 
-RUN npm run build
 
 EXPOSE 5000
 
