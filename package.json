@@ -71,7 +71,7 @@
     "eject": "react-scripts eject",
     "dev": "webpack-dev-server --history-api-fallback",
     "serve:dev": "webpack --mode 'development' && npx serve dist -s" ,
-    "serve:prod": "webpack --mode 'production' && npx serve dist -s" 
+    "serve:prod": "npx serve dist -s" 
   },
   "eslintConfig": {
     "extends": "react-app"

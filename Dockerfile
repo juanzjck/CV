@@ -8,7 +8,7 @@ WORKDIR /usr/src/src
 
 RUN npm i --save  && npm audit fix
 
-
+RUN npm run build
 
 COPY [".","/usr/src/"]
 
