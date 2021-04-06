@@ -6,7 +6,7 @@ COPY ["package.json","/usr/src/"]
 
 WORKDIR /usr/src/src
 
-RUN npm i --production && npm audit fix
+RUN npm i --save --production && npm audit fix
 
 #RUN npm i @apollo/client@3.1.2 --save 
 
