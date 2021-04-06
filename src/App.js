@@ -3,10 +3,9 @@ import './App.css';
 import Layaout from './component/Layout';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from './Screen/Home';
-import createHistory from "history/createBrowserHistory"
+import {history} from "./History";
 import { ScrollingProvider} from 'react-scroll-section';
 
-const history = createHistory()
 
 class App extends React.Component {
   constructor(props) {

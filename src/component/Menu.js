@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import logo from '../images/logo.png';
 import './style/main.css';
-
+import {connect} from 'react-redux'
 import { Link, Events } from "react-scroll";
 import ModalLayout from './ModalLayout';
  class Menu extends Component {
@@ -20,7 +20,7 @@ import ModalLayout from './ModalLayout';
       componentWillUnmount(){
           window.removeEventListener('scroll', this.handleScroll);
       }
-      handleScroll=(event)=> {
+      handleScroll(event) {
           let scrollTop = event.srcElement.body,
               itemTranslate = Math.min(0, scrollTop/3 - 60);    
           this.setState({
@@ -31,8 +31,8 @@ import ModalLayout from './ModalLayout';
     render() { 
 
         return ( <nav className={`menu`}>
-                    <Link className="brand_button" to='/'><img className="menu__img" src={logo}></img></Link> 
-                    <Link className="brand_button--mobile" to='/'><img className="menu__img--mobile" src={logo}></img></Link> 
+                    <Link className="brand_button" to='/'><img alt={`${this.props.profile&&this.props.profile.name}'s logo`} className="menu__img" src={logo}></img></Link> 
+                    <Link className="brand_button--mobile" to='/'><img alt={`${this.props.profile&&this.props.profile.name}'s logo`} className="menu__img--mobile" src={logo}></img></Link> 
                     <div className="mobile_menu">
                         
                            <div onClick={()=>this.setState({modal:true})} className="menu_icone">
@@ -81,24 +81,10 @@ import ModalLayout from './ModalLayout';
                                         offset={-70}
                                         duration={500}
                                         className="menu_link">
-                                                    Portafolio
+                                                     Portfolio
                                         </Link>  
                                     </div> 
-                                    <div className="menu_button">
-                                        <Link    
-                                            onClick={()=>this.setState({modal:false})}
-                                            activeClass="active"
-                                            to="myvision"
-                                            spy={true}
-                                            smooth={true}
-                                            offset={-80}
-                                            duration={500}
-                                            className="menu_link">
-                                                    My vision
-                                        </Link> 
-                                    
-                                    </div>    
-                                            
+                                 
                                     <div className="menu_button">
                                         <Link    
                                         onClick={()=>this.setState({modal:false})}
@@ -109,7 +95,7 @@ import ModalLayout from './ModalLayout';
                                         offset={-70}
                                         duration={500}
                                         className="menu_link">
-                                                    Keep touch
+                                                     Keep in touch
                                         </Link>
                                     </div>
                             
@@ -157,23 +143,10 @@ import ModalLayout from './ModalLayout';
                             offset={-70}
                             duration={500}
                             className="menu_link">
-                                     Portafolio
+                                     Portfolio
                         </Link>       
                         </li>
-                        <li className="menu__item">
-                        <Link    
-                                activeClass="active"
-                                to="myvision"
-                            spy={true}
-                            smooth={true}
-                            offset={-70}
-                            duration={500}
-                            className="menu_link">
-                                     My vision
-                        </Link> 
-                
-                              
-                        </li>
+                    
                         <li className="menu__item">
                         <Link    
                                 activeClass="active"
@@ -183,7 +156,7 @@ import ModalLayout from './ModalLayout';
                             offset={-70}
                             duration={500}
                             className="menu_link">
-                                     Keep touch
+                                     Keep in touch
                                 </Link>        
                         </li>
 
@@ -191,5 +164,9 @@ import ModalLayout from './ModalLayout';
                 </nav>  );
     }
 }
- 
-export default Menu;
+ function mapStateToPops(state){
+     return{
+        profile:state.profile.profile
+     }
+ }
+export default connect(mapStateToPops)(Menu);

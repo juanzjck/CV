@@ -29,7 +29,7 @@ class Portafolio extends React.Component {
     async componentDidMount(){
    
     }
-    loadData=(data)=>{
+    loadData(data){
         
         this.props.dispatch({
             type:'LOAD_ALL_PORTAFOLIO',
@@ -45,7 +45,7 @@ class Portafolio extends React.Component {
             <div className="portafolio__container">
                 <h3 className="section__title">Portafolio</h3>
                 <div>
-                    <Query  query={GET_PORTAFOLIO}>
+                    <Query fetchPolicy="no-cache"  query={GET_PORTAFOLIO}>
                         {({data,loading})=>{
                             if(loading)this.props.dispatch({
                                 type:'LOADING',

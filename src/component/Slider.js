@@ -22,7 +22,7 @@ class Slider extends Component {
     componentWillUnmount(){
       //  clearInterval(this.intervalId);
     }
-    fetchData=async ()=>{
+    async fetchData(){
             this.setState({loading:true,error:null});
             try{
              
@@ -37,7 +37,7 @@ class Slider extends Component {
             }
             
     }
-    isLoading=()=>{
+    isLoading(){
             return this.state.loading===true? '...':'';
     }
 
@@ -48,7 +48,8 @@ class Slider extends Component {
         <div className="slider">
          
                         <div className="slider__profile">
-                                <img className="slider__image" alt={`${this.props.profile&&this.props.profile.name}'s perfil photo`} src={this.props.profile?this.props.profile.image.image.publicUrl:''}></img>
+                            {this.props.profile&&<img className="slider__image" alt={`${this.props.profile&&this.props.profile.name}'s perfil photo`} src={this.props.profile?this.props.profile.image.image.publicUrl:''}></img>}
+                                
                         </div>
                         <div className="badge">
                             <div className="badge__container">

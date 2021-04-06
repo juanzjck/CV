@@ -17,7 +17,7 @@ class ContactFrom extends Component {
         super(props);
         this.state = { loading:false, error:null, mensaje:'' }
     }
-    handleSubmit=  async(e,email)=>{
+    async handleSubmit(e,email){
         e.preventDefault();
         this.props.dispatch({
             type:'LOADING',
@@ -29,7 +29,7 @@ class ContactFrom extends Component {
            this.handleError(e)
         }
     }
-    handleError=(error)=>{
+    handleError(error){
         setTimeout(() => {
             this.props.dispatch({
                 type:'LOADING',
@@ -44,7 +44,7 @@ class ContactFrom extends Component {
             payload:error
         })
     }
-    handleResult=async(data)=>{
+    async handleResult(data){
         if(data!==null){
             console.log(data)
             this.props.dispatch({
@@ -65,13 +65,13 @@ class ContactFrom extends Component {
         }
      
     }
-    onChangeEmail=(email)=>{
+    onChangeEmail(email){
         this.props.dispatch({
             type:'SET_MESSAGE',
             payload:email.target.value
         })
     }
-    onChangeMessage=(message)=>{
+    onChangeMessage(message){
         this.props.dispatch({
             type:'SET_EMAIL',
             payload:message.target.value

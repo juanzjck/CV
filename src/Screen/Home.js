@@ -38,7 +38,7 @@ class Home extends Component {
        
         //setTimeout(()=>{alert('Hola')},3000);
     }
-    loadData=(data)=>{
+    loadData(data){
         this.props.dispatch({
           type:'LOAD_INFO',
           payload:data
@@ -53,7 +53,7 @@ class Home extends Component {
           <ScreenLayout>
      
             <Fragment>
-              <Query query={GET_PROFILE} >
+              <Query fetchPolicy="no-cache" query={GET_PROFILE} >
                 {(data, loading)=>{
                   if(loading)this.props.dispatch({
                     type:'LOADING',
