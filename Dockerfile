@@ -6,7 +6,7 @@ COPY ["package.json","package-lock.json","/usr/src/"]
 
 WORKDIR /usr/src/src
 
-RUN npm i --save --production && npm audit fix
+RUN npm i --save  && npm audit fix
 
 
 
