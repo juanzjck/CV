@@ -13,7 +13,7 @@ RUN npm run build
 COPY [".","/usr/src/"]
 
 
-EXPOSE 3000
+EXPOSE 5000
 
 CMD ["npm","run","serve:prod"]
 
