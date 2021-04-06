@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@apollo/client": "^3.1.1",
+    "@babel/plugin-transform-runtime": "^7.13.10",
     "@brainhubeu/react-carousel": "^1.13.26",
     "@fortawesome/fontawesome-free": "^5.13.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.29",
@@ -23,6 +24,8 @@
     "graphql": "^15.4.0",
     "graphql-tag": "^2.11.0",
     "history": "^4.10.1",
+    "html-webpack-link-type-plugin": "^1.1.0",
+    "mini-css-extract-plugin": "^1.4.0",
     "pure-react-carousel": "^1.27.0",
     "rdux": "^0.1.5",
     "react": "^17.0.1",
@@ -52,6 +55,8 @@
     "@babel/preset-react": "^7.12.13",
     "babel-loader": "^8.2.2",
     "css-loader": "^5.2.0",
+    "favicons": "^6.2.1",
+    "favicons-webpack-plugin": "^5.0.2",
     "html-webpack-plugin": "^4.3.0",
     "webpack": "^4.44.0",
     "webpack-cli": "^3.3.12",
@@ -64,7 +69,9 @@
     "start": "react-scripts start",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "dev": "webpack-dev-server --history-api-fallback"
+    "dev": "webpack-dev-server --history-api-fallback",
+    "serve:dev": "webpack --mode 'development' && npx serve dist -s" ,
+    "serve:prod": "webpack --mode 'production' && npx serve dist -s" 
   },
   "eslintConfig": {
     "extends": "react-app"

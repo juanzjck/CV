@@ -48,7 +48,7 @@ class Slider extends Component {
         <div className="slider">
          
                         <div className="slider__profile">
-                            {this.props.profile&&<img className="slider__image" alt={`${this.props.profile&&this.props.profile.name}'s perfil photo`} src={this.props.profile?this.props.profile.image.image.publicUrl:''}></img>}
+                            {this.props.profile&&<img height={'auto'} width={'70px'}  className="slider__image" alt={`${this.props.profile&&this.props.profile.name}'s perfil photo`} src={this.props.profile?this.props.profile.image.image.publicUrl:''}></img>}
                                 
                         </div>
                         <div className="badge">

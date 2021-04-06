@@ -1,5 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const path = require('path')
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
+const LinkTypePlugin = require('html-webpack-link-type-plugin').HtmlWebpackLinkTypePlugin;
 module.exports = {
   output: {
     filename: 'app.bundle.js',
@@ -7,8 +9,12 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template:'public/index.html'
-    })
+      template:'public/index.html',
+      favicon: "./public/favicon.ico"
+    }),
+    new LinkTypePlugin({
+      '**/*.css' : 'text/css'
+    }),
   ],
   stats: {
     children: false, 
@@ -20,7 +26,7 @@ module.exports = {
       use: {
         loader: 'babel-loader',
         options: {
-          plugins:['@babel/plugin-syntax-dynamic-import'],
+          plugins:['@babel/plugin-syntax-dynamic-import','@babel/plugin-transform-runtime'],
           presets: ['@babel/preset-env', '@babel/preset-react']
         }
       }
@@ -30,10 +36,20 @@ module.exports = {
       use: ["style-loader", "css-loader"],
     },
     {
-      test: /\.(jpg|png|gif)$/,
+      test: /\.(png|svg|jpg|jpeg|gif|ico)$/,
+      exclude: /node_modules/,
       use: {
         loader: 'url-loader',
       },
-    }]
+    },
+    {
+      test: /favicon\.ico$/,
+      loader: 'url',
+      query: { 
+        limit: 1,
+        name: '[name].[ext]',
+      },
+    },
+  ]
   }
 }
