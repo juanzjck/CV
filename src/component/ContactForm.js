@@ -81,7 +81,7 @@ class ContactFrom extends Component {
         return(
             <div className="ContactForm">
                 <div className="ContactForm__container">
-                    <h3 className="section__title">Keep touch</h3>
+                    <h3 className="section__title">Keep in touch</h3>
                     {this.state.mensaje}
                    <Mutation mutation={SEND_EMAIL}>
                        {(email,{data,loading})=>{

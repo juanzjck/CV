@@ -72,7 +72,10 @@ class Home extends Component {
                     </TextSection>
                 </section>
                 <section id="skills">
-                    <Skills />
+                  <TextSection title="Tech stack & quatlifications">
+                    
+                  </TextSection>
+                  <Skills />
                 </section>
                 <section id="portafolio">
                     <Portafolio></Portafolio>
