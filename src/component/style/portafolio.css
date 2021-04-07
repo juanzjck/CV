@@ -29,9 +29,14 @@ img.portafolio_img {
 .portafolio_card {
     position: relative;
 }
+.portafolio_content>a {
+    margin: 3%;
+    text-decoration: none;
+    color: #ffff;
+}
 .portafolio_content {
     color: white;
-    background: #00ace41c;
+    background: #00ace4de;
 }
 .portafolio_content>p {
     margin: 3%;

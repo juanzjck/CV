@@ -11,6 +11,7 @@ const GET_PORTAFOLIO=gql`query{
       title
       description
       isShow
+      link
       image{
         image{
           filename
@@ -43,7 +44,7 @@ class Portafolio extends React.Component {
     render() { 
         return (
             <div className="portafolio__container">
-                <h3 className="section__title">Portafolio</h3>
+                <h3 className="section__title">Portfolio</h3>
                 <div>
                     <Query fetchPolicy="no-cache"  query={GET_PORTAFOLIO}>
                         {({data,loading})=>{
@@ -60,7 +61,7 @@ class Portafolio extends React.Component {
                     {this.props.portafolioList?this.props.portafolioList.map((p)=>{
                             
                             return(
-                                 <PortafolioItem key={p.title} backgroundimg={p.image.image.publicUrl}  title={p.title} description={p.description}></PortafolioItem>   
+                                 <PortafolioItem key={p.title} backgroundimg={p.image.image.publicUrl} link={p.link} link={p.link}  title={p.title} description={p.description}></PortafolioItem>   
                             )
                     }):undefined}
                     </div>
