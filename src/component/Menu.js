@@ -68,7 +68,7 @@ import ModalLayout from './ModalLayout';
                                     offset={-70}
                                     duration={500}
                                     className="menu_link">
-                                            Skills and knowledge
+                                        Tech stack & quatlifications
                                         </Link>           
                                     </div>
                                     <div className="menu_button">
