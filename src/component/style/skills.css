@@ -2,8 +2,7 @@
     padding: 10px;
     white-space: nowrap;
     overflow: scroll;
-    overflow-y: hidden;
-    
+    overflow-y: hidden;  
 }
 .corousel__container::-webkit-scrollbar {
     background: #827bb073;
@@ -51,12 +50,10 @@
 .corousel-item__description {
     margin: 0px 16px;
     color: #ffff;
+    
 }
 .corousel-item__description>p{
     margin: 0px;
-}
-.corousel-item--icone {
- /*   width: 41vh;*/
 }
 svg.svg-inline--fa.fa-mobile.fa-w-10 {
     width: 87%;
