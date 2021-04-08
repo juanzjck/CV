@@ -58,6 +58,7 @@ class Skills extends Component {
         return (  
               <div className="corousel">
                         <div className="corousel__container">
+                            
                         <h3 className="section__title">TECH STACK & QUATLIFICATIONS</h3>
                            {this.state.skils.map((doc,Id)=>{
                               return <Skill key={Id} category={doc.category} icon={doc.icon} title={doc.title} description={doc.description}/>
