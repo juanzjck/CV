@@ -26,7 +26,7 @@ class PortafolioItem extends React.Component {
               <p>
                 {this.props.description}
               </p>
-              <a href={`${this.props.link}`} target="blank">Ver proyecto....</a>
+              <a href={`${this.props.link}`} target="blank">More....</a>
               <div className="portafolios__icons">
 
                 {this.icons()}
