@@ -5,6 +5,8 @@ import { GrGraphQl } from "react-icons/gr";
 import { SiRedux, SiCsswizardry } from "react-icons/si";
 import { DiScrum } from "react-icons/di"
 import { faReact, faUnity, faNodeJs, faDocker,faGithub } from '@fortawesome/free-brands-svg-icons';
+import Carousel from 'react-elastic-carousel';
+
 class Skills extends Component {
     constructor(props) {
         super(props);
@@ -56,18 +58,26 @@ class Skills extends Component {
     }
     render() { 
         return (  
-              <div className="corousel">
-                    <h3 className="section__title">TECH STACK & QUALIFICATIONS</h3>
-                        <div className="corousel__container">
-                            
-                      
-                           {this.state.skils.map((doc,Id)=>{
-                              return <Skill key={Id} category={doc.category} icon={doc.icon} title={doc.title} description={doc.description}/>
-                           })}
-                      </div>
-                </div> 
-                    );
+            <div>
+                <h3 className="section__title">TECH STACK & QUALIFICATIONS</h3>
+                <Carousel>
+                    {this.state.skils.map((doc,Id)=>{
+                        return <Skill key={Id} category={doc.category} icon={doc.icon} title={doc.title} description={doc.description}/>
+                    })}
+               </Carousel>
+            </div>
+);
     }
 }
- 
+ /*
+    <div className="corousel">
+       
+            <div className="corousel__container">
+                
+            
+                {this.state.skils.map((doc,Id)=>{
+                    return <Skill key={Id} category={doc.category} icon={doc.icon} title={doc.title} description={doc.description}/>
+                })}
+            </div>
+    </div>  */
 export default Skills;

@@ -32,6 +32,7 @@
     "react-apollo": "^3.1.5",
     "react-apollo-hooks": "^0.5.0",
     "react-dom": "^17.0.2",
+    "react-elastic-carousel": "^0.11.5",
     "react-fa": "^5.0.0",
     "react-helmet": "^6.1.0",
     "react-icons": "^4.2.0",
@@ -46,8 +47,13 @@
     "react-scripts": "^4.0.1",
     "react-scroll": "^1.8.0",
     "react-scroll-section": "^2.0.0",
+    "react-slick": "^0.28.1",
     "redux": "^4.0.5",
-    "video-react": "^0.14.1"
+    "slick-carousel": "^1.8.1",
+    "styled-components": "^5.2.3",
+    "svg-url-loader": "^7.1.1",
+    "video-react": "^0.14.1",
+    "webfonts-loader": "^0.2.3"
   },
   "devDependencies": {
     "@babel/core": "^7.13.8",
@@ -70,8 +76,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "dev": "webpack-dev-server --history-api-fallback",
-    "serve:dev": "webpack --mode 'development' && npx serve dist -s" ,
-    "serve:prod": "npx serve dist -s" 
+    "serve:dev": "webpack --mode 'development' && npx serve dist -s",
+    "serve:prod": "npx serve dist -s"
   },
   "eslintConfig": {
     "extends": "react-app"

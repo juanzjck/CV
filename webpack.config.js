@@ -50,6 +50,39 @@ module.exports = {
         name: '[name].[ext]',
       },
     },
+    {
+      test: /\.svg$/,
+      use: [
+        {
+          loader: 'svg-url-loader',
+          options: {
+            limit: 10000,
+          },
+        },
+      ],
+    },
+    {
+      test:  /\.font\.(js|json)$/,
+      use: [
+        {
+          loader: 'style!css!webfonts',
+          options: {
+            limit: 10000,
+          },
+        },
+      ],
+    },
+    {
+      test:  /\.styled-components$/,
+      use: [
+        {
+          loader: 'styled-components',
+          options: {
+            limit: 10000,
+          },
+        },
+      ],
+    }
   ]
   }
 }
