@@ -25,21 +25,26 @@ class Portafolio extends React.Component {
         let i=0
         let j=1
         new Promise((resolver, rechazar)=>{
-            data.allPortafolios.map(item=>{
-                i++;
+            try {
+                data.allPortafolios.map(item=>{
+                    i++;
+            
+                    auxColums.push(item)
+                    if(i>3){
+                        row.push(auxColums) 
+                        auxColums=[]
+                        i=0;
+                    }
+                   
         
-                auxColums.push(item)
-                if(i>3){
-                    row.push(auxColums) 
-                    auxColums=[]
-                    i=0;
-                }
-               
+                    
+                })
     
-                
-            })
-
-            setTimeout(()=> resolver(''),1000)
+                setTimeout(()=> resolver(''),1000)
+            } catch (error) {
+                rechazar(error)
+            }
+           
            
         }).then(()=> {
     
@@ -53,7 +58,7 @@ class Portafolio extends React.Component {
             }) 
         }
             
-        )     
+        )
     }
     render() { 
         return (

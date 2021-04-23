@@ -1,4 +1,3 @@
-
 import React, {Component, Fragment} from 'react';
 import ContactFrom from '../component/ContactForm';
 import Skills from '../component/Skills';
@@ -9,7 +8,7 @@ import { Query } from '@keystonejs/apollo-helpers';
 import gql from 'graphql-tag';
 import ScreenLayout from '../Layout/SreenLayout';
 import {connect} from 'react-redux';
-
+import PostCarousel from '../component/PostCarousel'
 const GET_PROFILE=gql`query{
   allProfiles{
      name
@@ -83,7 +82,9 @@ class Home extends Component {
                        {this.props.profile?this.props.profile.whyJavascript:''}
                     </TextSection>
                 </section>
-               
+               <section>
+                 <PostCarousel></PostCarousel>
+               </section>
             
                 <section id="contact">
                     <ContactFrom />
