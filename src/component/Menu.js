@@ -12,13 +12,13 @@ import ModalLayout from './ModalLayout';
           }
     }
     componentDidMount(){
-        Events.scrollEvent.register('begin', function(to, element) {
+       /* Events.scrollEvent.register('begin', function(to, element) {
             console.log('begin', arguments);
           });
-          
+        */  
       }
       componentWillUnmount(){
-          window.removeEventListener('scroll', this.handleScroll);
+         // window.removeEventListener('scroll', this.handleScroll);
       }
       handleScroll(event) {
           let scrollTop = event.srcElement.body,

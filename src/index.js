@@ -11,8 +11,10 @@ import { ApolloProvider as ApolloHooksProvider } from '@apollo/react-hooks';
 import {  KeystoneProvider } from '@keystonejs/apollo-helpers';
 import Modal from 'react-modal';
 Modal.setAppElement('#modal')
+
+
 ReactDOM.render(
-  <React.StrictMode>
+
     <ApolloProvider client={client}>
       <ApolloHooksProvider client={client}>
         <KeystoneProvider>
@@ -22,7 +24,7 @@ ReactDOM.render(
         </KeystoneProvider>
       </ApolloHooksProvider>
     </ApolloProvider>
-  </React.StrictMode>,
+,
   document.getElementById('root')
 );
 

@@ -27,6 +27,9 @@ class ScreenLayout extends React.Component {
                     <title>{this.props.profile?this.props.profile.name:''}-{this.props.profile?this.props.profile.position:''}</title>
                     <meta name="description" 
                      content={this.props.profile?this.props.profile.meta_description?this.props.profile.meta_description:'A profecional cv':'A profecional cv'}/>
+                    
+                    
+                        
                 </Helmet>
                 <Modal    style={customStyles} isOpen={this.props.loadign}>
                     <div className="loadingModal">
